@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+        integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+    <script>
+        function showClock(el, offset) {
+            var d = new Date()
+            d.setTime(d.getTime() + (offset * 60 * 60 * 1000))
+            var hour = d.getHours().toString().padStart(2, '0')
+            var minute = d.getMinutes().toString().padStart(2, '0')
+            var second = d.getSeconds().toString().padStart(2, '0')
+
+            $(el).find('.hour').text(hour)
+            $(el).find('.minute').text(minute)
+            $(el).find('.seconds').text(second)
+        }
+
+        function showClock1() {
+            showClock('#clock1', 0)
+            setTimeout(showClock1, 1000)
+        }
+
+        function showClock2() {
+            showClock('#clock2', -4)
+            setTimeout(showClock2, 1000)
+        }
+
+        function showClock3() {
+            showClock('#clock3', 2)
+            setTimeout(showClock3, 1000)
+        }
+
+        function showClock4() {
+            showClock('#clock4', -6)
+            setTimeout(showClock4, 1000)
+        }
+
+        function showClock5() {
+            showClock('#clock5', 0)
+            setTimeout(showClock5, 1000)
+        }
+
+        function showClock6() {
+            showClock('#clock6', 8)
+            setTimeout(showClock6, 1000)
+        }
+
+        $(document).ready(function () {
+            showClock1()
+            showClock2()
+            showClock3()
+            showClock4()
+            showClock5()
+            showClock6()
+        })
+    </script>
+    <title>jQuery World Clock</title>
+</head>
+
+<body class="bg-gray-200 font-sans">
+    <div class="container mx-auto mt-4 p-4">
+        <h1 class="text-2xl">jQuery World Clock</h1>
+
+        <div class="mt-4 grid gap-4 grid-cols-2">
+
+            <div id="clock1" class="bg-white shadow-sm rounded p-2">
+                <div class="text-lg pb-2 font-semibold">Germany</div>
+                <div class="text-6xl text-bold font-mono text-center py-6">
+                    <span class="hour"></span>:<span class="minute text-red-500"></span>:<span
+                        class="seconds text-yellow-500">
+                    </span>
+                </div>
+            </div>
+
+            <div id="clock2" class="bg-white shadow-sm rounded p-2">
+                <div class="text-lg pb-2 font-semibold">Brazil</div>
+                <div class="text-6xl text-bold font-mono text-center py-6">
+                    <span class="hour"></span>:<span class="minute text-red-500"></span>:<span
+                        class="seconds text-yellow-500">
+                    </span>
+                </div>
+            </div>
+
+            <div id="clock3" class="bg-white shadow-sm rounded p-2">
+                <div class="text-lg pb-2 font-semibold">Russia</div>
+                <div class="text-6xl text-bold font-mono text-center py-6">
+                    <span class="hour"></span>:<span class="minute text-red-500"></span>:<span
+                        class="seconds text-yellow-500">
+                </div>
+            </div>
+
+            <div id="clock4" class="bg-white shadow-sm rounded p-2">
+                <div class="text-lg pb-2 font-semibold">Canada</div>
+                <div class="text-6xl text-bold font-mono text-center py-6">
+                    <span class="hour"></span>:<span class="minute text-red-500"></span>:<span
+                        class="seconds text-yellow-500"></span>
+                </div>
+            </div>
+
+            <div id="clock5" class="bg-white shadow-sm rounded p-2">
+                <div class="text-lg pb-2 font-semibold">Spain</div>
+                <div class="text-6xl text-bold font-mono text-center py-6">
+                    <span class="hour"></span>:<span class="minute text-red-500"></span>:<span
+                        class="seconds text-yellow-500">
+                    </span>
+                </div>
+            </div>
+
+            <div id="clock6" class="bg-white shadow-sm rounded p-2">
+                <div class="text-lg pb-2 font-semibold">Japan</div>
+                <div class="text-6xl text-bold font-mono text-center py-6">
+                    <span class="hour"></span>:<span class="minute text-red-500"></span>:<span
+                        class="seconds text-yellow-500">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
